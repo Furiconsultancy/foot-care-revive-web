@@ -32,6 +32,9 @@ const Navbar: React.FC = () => {
           <a href="#treatments" className="text-clinic-text hover:text-clinic-accent transition-colors">
             Treatments
           </a>
+          <a href="#doctors" className="text-clinic-text hover:text-clinic-accent transition-colors">
+            Doctors
+          </a>
           <a href="#faq" className="text-clinic-text hover:text-clinic-accent transition-colors">
             FAQs
           </a>
@@ -91,6 +94,13 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Treatments
+            </a>
+            <a
+              href="#doctors"
+              className="text-clinic-text hover:text-clinic-accent transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Doctors
             </a>
             <a
               href="#faq"
