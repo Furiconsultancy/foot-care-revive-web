@@ -5,6 +5,10 @@ import { Button } from '@/components/ui/button';
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleBookConsultation = () => {
+    window.open('https://wa.me/918886735004', '_blank');
+  };
+
   return (
     <nav className="sticky top-0 bg-white shadow-md z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -25,6 +29,9 @@ const Navbar: React.FC = () => {
           <a href="#services" className="text-clinic-text hover:text-clinic-accent transition-colors">
             Services
           </a>
+          <a href="#treatments" className="text-clinic-text hover:text-clinic-accent transition-colors">
+            Treatments
+          </a>
           <a href="#faq" className="text-clinic-text hover:text-clinic-accent transition-colors">
             FAQs
           </a>
@@ -33,7 +40,10 @@ const Navbar: React.FC = () => {
           </a>
         </div>
 
-        <Button className="hidden md:block bg-clinic-accent hover:bg-clinic-bg text-white transition-colors">
+        <Button 
+          onClick={handleBookConsultation}
+          className="hidden md:block bg-clinic-accent hover:bg-clinic-bg text-white transition-colors"
+        >
           Book a Consultation
         </Button>
 
@@ -76,6 +86,13 @@ const Navbar: React.FC = () => {
               Services
             </a>
             <a
+              href="#treatments"
+              className="text-clinic-text hover:text-clinic-accent transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Treatments
+            </a>
+            <a
               href="#faq"
               className="text-clinic-text hover:text-clinic-accent transition-colors"
               onClick={() => setIsMenuOpen(false)}
@@ -89,7 +106,10 @@ const Navbar: React.FC = () => {
             >
               Contact
             </a>
-            <Button className="bg-clinic-accent hover:bg-clinic-bg text-white transition-colors w-full">
+            <Button 
+              onClick={handleBookConsultation}
+              className="bg-clinic-accent hover:bg-clinic-bg text-white transition-colors w-full"
+            >
               Book a Consultation
             </Button>
           </div>
