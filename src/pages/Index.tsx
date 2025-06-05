@@ -9,6 +9,7 @@ import DoctorsSection from '../components/DoctorsSection';
 import FaqSection from '../components/FaqSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <FaqSection />
       <ContactSection />
       <Footer />
+      <FloatingWhatsAppButton />
     </div>
   );
 };

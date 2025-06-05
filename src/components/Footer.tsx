@@ -38,9 +38,20 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-8 pt-6 text-center">
+        <div className="border-t border-white/20 mt-8 pt-6 text-center space-y-2">
           <p className="text-white/80">
             © {currentYear} Reconstructive Diabetic Foot Care Clinic. All rights reserved.
+          </p>
+          <p className="text-white/60 text-sm">
+            Designed and Developed by{' '}
+            <a 
+              href="https://furiglobal.in" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-clinic-accent hover:text-white transition-colors"
+            >
+              furiglobal.in
+            </a>
           </p>
         </div>
       </div>
