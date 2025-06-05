@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Stethoscope, Heart } from 'lucide-react';
-
 const ServicesSection: React.FC = () => {
-  return (
-    <section id="services" className="py-16 md:py-24 bg-clinic-bg">
+  return <section id="services" className="py-16 md:py-24 bg-clinic-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-clinic-text mb-4">
@@ -19,11 +16,7 @@ const ServicesSection: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <Card className="bg-white shadow-lg border-none rounded-lg overflow-hidden animate-fade-in hover:shadow-xl transition-shadow duration-300">
             <div className="relative h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Foot examination procedure"
-                className="w-full h-full object-cover"
-              />
+              <img alt="Foot examination procedure" className="w-full h-full object-cover" src="/lovable-uploads/424fa935-3ae5-46cd-b6ab-f2e1f1ba92e9.jpg" />
               <div className="absolute top-4 left-4 bg-clinic-accent/90 p-2 rounded-full">
                 <Stethoscope className="w-6 h-6 text-white" />
               </div>
@@ -47,11 +40,7 @@ const ServicesSection: React.FC = () => {
           
           <Card className="bg-white shadow-lg border-none rounded-lg overflow-hidden animate-fade-in hover:shadow-xl transition-shadow duration-300">
             <div className="relative h-48 overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Advanced wound care treatment"
-                className="w-full h-full object-cover"
-              />
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Advanced wound care treatment" className="w-full h-full object-cover" />
               <div className="absolute top-4 left-4 bg-clinic-accent/90 p-2 rounded-full">
                 <Heart className="w-6 h-6 text-white" />
               </div>
@@ -73,8 +62,6 @@ const ServicesSection: React.FC = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ServicesSection;
