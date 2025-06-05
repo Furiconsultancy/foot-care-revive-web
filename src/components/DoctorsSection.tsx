@@ -1,18 +1,23 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { UserCheck, Award } from 'lucide-react';
 
 const DoctorsSection: React.FC = () => {
   const doctors = [
     {
       name: "Dr. Sumitra Gantayet",
       qualifications: "DNB (Plastic Surgery), DNB (General Surgery)",
-      description: "Dr. Sumitra Gantayet has done DNB General Surgery from Seven Hills Hospital, Visakhapatnam, following which she completed her DNB in Plastic Surgery from Ganga Hospital, Coimbatore. With extensive experience in trauma reconstruction, microsurgery, hand surgery, and diabetic foot surgery, Dr. Sumitra brings a wealth of knowledge and skill to her practice."
+      description: "Dr. Sumitra Gantayet has done DNB General Surgery from Seven Hills Hospital, Visakhapatnam, following which she completed her DNB in Plastic Surgery from Ganga Hospital, Coimbatore. With extensive experience in trauma reconstruction, microsurgery, hand surgery, and diabetic foot surgery, Dr. Sumitra brings a wealth of knowledge and skill to her practice.",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      icon: UserCheck
     },
     {
       name: "Dr. Anjali Saple",
       qualifications: "MS, DNB (General Surgery), DNB (Plastic Surgery), MNAMS",
-      description: "Dr. Anjali Saple is a renowned plastic and cosmetic surgeon who is dedicated to helping her patients achieve their desired look. With over 25 years of experience, Dr. Saple has assisted countless individuals through both surgical and non-surgical procedures to improve their appearance and self-confidence."
+      description: "Dr. Anjali Saple is a renowned plastic and cosmetic surgeon who is dedicated to helping her patients achieve their desired look. With over 25 years of experience, Dr. Saple has assisted countless individuals through both surgical and non-surgical procedures to improve their appearance and self-confidence.",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80",
+      icon: Award
     }
   ];
 
@@ -29,23 +34,37 @@ const DoctorsSection: React.FC = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {doctors.map((doctor, index) => (
-            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="text-center">
-                <CardTitle className="font-playfair text-2xl font-bold text-clinic-text mb-2">
-                  {doctor.name}
-                </CardTitle>
-                <p className="text-clinic-accent font-medium">
-                  {doctor.qualifications}
-                </p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-clinic-text/80 leading-relaxed">
-                  {doctor.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+          {doctors.map((doctor, index) => {
+            const IconComponent = doctor.icon;
+            return (
+              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={doctor.image}
+                    alt={`Portrait of ${doctor.name}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4 bg-clinic-accent/90 p-2 rounded-full">
+                    <IconComponent className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <CardHeader className="text-center pb-2">
+                  <CardTitle className="font-playfair text-2xl font-bold text-clinic-text mb-2">
+                    {doctor.name}
+                  </CardTitle>
+                  <p className="text-clinic-accent font-medium text-sm">
+                    {doctor.qualifications}
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-clinic-text/80 leading-relaxed text-sm">
+                    {doctor.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
